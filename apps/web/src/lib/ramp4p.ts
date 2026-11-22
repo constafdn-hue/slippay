@@ -14,7 +14,7 @@ export class Ramp4pError extends Error {
   }
 }
 
-async function handle<T>(res: Response): Promise<T> {
+export async function handle<T>(res: Response): Promise<T> {
   let json: unknown = null;
   try { json = await res.json(); } catch { /* non-json */ }
   if (!res.ok) {
